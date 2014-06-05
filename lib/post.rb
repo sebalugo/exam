@@ -2,16 +2,16 @@ class Post
 
 attr_accessor :title,:text,:date,:user,:filename,:tags
 
-def initialize title=nil,text=nil,date=nil,user=nil,filename=nil
+def initialize *args
 
-	if filename.nil? 	
-	@title = title
-	@text = text
-	@date = date
-	@user = user
+	if args.size != 1 	
+	@title = args[0]
+	@text = args[1]
+	@date = args[2]
+	@user = args[3]
 	@tags = []
 	else
-	file = YAML::load(File.open(filename,"r"))
+	file = YAML::load(File.open(args[0],"r"))
 	@title = file.title
 	@text = file.text
 	@date = file.date
