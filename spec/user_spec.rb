@@ -40,8 +40,17 @@ describe User do
   end
 
   describe "#find_post_by_title" do
-    it "should return a post by title"
-    it "should return the first one if there are several with the same name"
+    it "should return a post by title" do
+	found = @user.find_post_by_title("Titulo")
+	expect(found.title).to eql("Titulo")		
+    end
+
+    it "should return the first one if there are several with the same name" do
+	@user.add_post(Date.new(2001-1-2),"Este no es","Titulo")
+	found = @user.find_post_by_title("Titulo")
+	expect(found.text).to eql("Texto prueba")
+    end
+
   end
 
 end
