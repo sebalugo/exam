@@ -8,6 +8,7 @@ describe Post do
 	@n_post = Post.new "Hola M","Texto",Date.new(2001,1,1),@user
  	@n_post.save
 	@post = YAML::load(File.open("hola-m.yml","r"))
+	@post_t = Post.new "Hola M","Texto con muchas palabras para probar el summary si si ejemplo 1 2 3 probando",Date.new(2001,1,1),@user
   end
 
 
@@ -26,7 +27,11 @@ describe Post do
     end
   end
   describe "#summary" do
-    it "should display the first 10 words of text"
+    it "should display the first 10 words of text" do
+	string_sum = "Texto con muchas palabras para probar el summary si si"
+	expect(string_sum).to eql(@post_t.summary)
+    end
+
   end
 
   describe "#tagme" do
