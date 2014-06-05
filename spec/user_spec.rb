@@ -4,7 +4,7 @@ describe User do
 
   before :each do
 
-  @user = User.new :Sebastian	
+  @user = User.new :Sebastian
   @user.add_post(Date.new(2001-1-2),"Texto prueba","Titulo")
   @user.add_post(Date.new(2001-1-1),"Segundo texto prueba","Titulo dos")
   end
@@ -51,6 +51,13 @@ describe User do
 	expect(found.text).to eql("Texto prueba")
     end
 
+  end
+
+  describe "#tag_cloud" do
+	it "should display tags with number" do
+		
+		@user.tag_cloud
+	end
   end
 
 end

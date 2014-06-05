@@ -1,0 +1,8 @@
+--- !ruby/object:Post
+title: Mi nuevo titulo
+text: Texto de prueba
+date: 2000-01-01
+user: !ruby/object:User
+  username: :Sebas
+  post_array: []
+tags: []

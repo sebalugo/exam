@@ -34,6 +34,22 @@ def find_post_by_title title
 
 end
 
+def tag_cloud 
+	
+	freq = {}
+	@post_array.each {|post|
+	
+	post.tags.each{|tags| 
+	
+	puts tags
+	
+	}
+
+
+	}
+
+end
+
 
 
 end
