@@ -1,4 +1,4 @@
-["order", "product"].each do |f|
+["post", "user"].each do |f|
 	require File.join(File.dirname(__FILE__), '..', "lib/#{f}.rb")
 end
 
