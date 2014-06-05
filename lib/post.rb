@@ -41,5 +41,21 @@ def same other_post
 
 end
 
+def entry
+
+entry_s = @user.username +", "+@date.to_s+"\n"
+entry_s += @title + "\n"
+entry_s += '"'+@text+'"'+"\n"
+entry_s += "Tags: "
+tags.each {|tag| entry_s+= ":"+"tag"}
+
+end
+
+def display_entry
+
+puts entry
+
+end
+
 
 end
