@@ -35,5 +35,11 @@ def tagme *args
 
 end
 
+def same other_post
+
+	@title == other_post.title && @text == other_post.text && @date == other_post.date
+
+end
+
 
 end
