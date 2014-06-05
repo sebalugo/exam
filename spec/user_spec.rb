@@ -5,7 +5,8 @@ describe User do
   before :each do
 
   @user = User.new :Sebastian	
-
+  @user.add_post(Date.new(2001,1,2),"Texto prueba","Titulo")
+  @user.add_post(Date.new(2001,1,1),"Segundo texto prueba","Titulo dos")
   end
 
   describe "#initialize" do
@@ -24,7 +25,10 @@ describe User do
   end
 
   describe "#add_post" do
-    it "should add a post to the posts list"
+    it "should add a post to the posts list" do
+	expect(@user.post_array.size).to eql(2)
+    end
+
   end
 
   describe "#list" do
