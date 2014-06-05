@@ -11,7 +11,7 @@ end
 
 def add_post date,text,title
 
-	post = Post.new title,text,date,@username
+	post = Post.new title,text,date,self
 	@post_array.push(post)
 
 end
