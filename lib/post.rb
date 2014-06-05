@@ -9,12 +9,14 @@ def initialize title=nil,text=nil,date=nil,user=nil,filename=nil
 	@text = text
 	@date = date
 	@user = user
+	@tags = []
 	else
 	file = YAML::load(File.open(filename,"r"))
 	@title = file.title
 	@text = file.text
 	@date = file.date
 	@user = file.user
+	@tags = file.tags
 	end
 	
 end
@@ -43,11 +45,14 @@ end
 
 def entry
 
-entry_s = @user.username +", "+@date.to_s+"\n"
+entry_s = @user.username.to_s
+entry_s += ", " + @date.to_s + "\n" 
 entry_s += @title + "\n"
 entry_s += '"'+@text+'"'+"\n"
 entry_s += "Tags: "
 tags.each {|tag| entry_s+= ":"+"tag"}
+entry_s += "\n"
+entry_s
 
 end
 
