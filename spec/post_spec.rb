@@ -18,12 +18,12 @@ describe Post do
 	expect(@post).to be_kind_of(Post)
       end
      end
-    end
 
     context "with proper attributes" do
       it "should properly initialize a post instance" do
+	expect(@n_post).to be_kind_of(Post)
+      end
     end
-
   end
   describe "#summary" do
     it "should display the first 10 words of text"
