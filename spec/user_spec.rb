@@ -2,8 +2,25 @@ require 'spec_helper'
 
 describe User do
 
+  before :each do
+
+  @user = User.new :Sebastian	
+
+  end
+
   describe "#initialize" do
-    it "should properly initialize with an username"
+    it "should properly initialize with an username" do
+	expect(@user).to be_kind_of(User)
+    end
+    it "username should be Symbol" do
+	expect(@user.username).to be_kind_of(Symbol)
+    end
+
+    it "username should be the one specified" do
+	expect(@user.username).to eql(:Sebastian)
+    end
+
+
   end
 
   describe "#add_post" do
