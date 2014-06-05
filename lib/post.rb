@@ -19,5 +19,11 @@ def initialize title=nil,text=nil,date=nil,user=nil,filename=nil
 	
 end
 
+def summary
+
+	text.split[0...10].join(' ')
+
+end
+
 
 end
