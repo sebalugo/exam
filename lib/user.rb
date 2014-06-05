@@ -30,7 +30,7 @@ end
 
 def find_post_by_title title
 
-	@post.array.select{|x| x.title == title}.first
+	@post_array.select{|x| x.title == title}.first
 
 end
 
