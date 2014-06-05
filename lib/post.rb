@@ -1,6 +1,6 @@
 class Post
 
-attr_accessor :title,:text,:date,:user,:filename
+attr_accessor :title,:text,:date,:user,:filename,:tags
 
 def initialize title=nil,text=nil,date=nil,user=nil,filename=nil
 
@@ -22,6 +22,16 @@ end
 def summary
 
 	text.split[0...10].join(' ')
+
+end
+
+def tagme *args
+
+	args.each do |arg|
+
+	tags.push(arg)	
+
+	end
 
 end
 
