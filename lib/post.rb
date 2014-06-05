@@ -62,5 +62,18 @@ puts entry
 
 end
 
+def save
+	file_n = paramet+".yml"
+	File.open(file_n,"w") do |f|
+	f.write	YAML::dump (self)
+	end
+end
+
+def paramet
+
+	save_name = @title.downcase
+	save_name.gsub(' ','-')
+
+end
 
 end
