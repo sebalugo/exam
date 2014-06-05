@@ -16,6 +16,12 @@ def add_post date,text,title
 
 end
 
+def posts 
+
+	@post_array.sort_by{|x| x.date}
+
+end
+
 
 
 end
