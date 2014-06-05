@@ -5,8 +5,8 @@ describe User do
   before :each do
 
   @user = User.new :Sebastian	
-  @user.add_post(Date.new(2001,1,2),"Texto prueba","Titulo")
-  @user.add_post(Date.new(2001,1,1),"Segundo texto prueba","Titulo dos")
+  @user.add_post(Date.new(2001-1-2),"Texto prueba","Titulo")
+  @user.add_post(Date.new(2001-1-1),"Segundo texto prueba","Titulo dos")
   end
 
   describe "#initialize" do
@@ -32,7 +32,11 @@ describe User do
   end
 
   describe "#list" do
-    it "should properly ouput all posts"
+    it "should properly ouput all posts" do
+	entry1 = "Sebastian, 2001-1-1" + "\n" +"Titulo dos" + "\n" + "Segundo texto prueba" + "\n"
+	
+    end
+
   end
 
   describe "#find_post_by_title" do
