@@ -1,14 +1,27 @@
 require 'spec_helper'
 
 describe Post do
+
+
+  before :each do
+	@user = User.new :Sebas
+	@n_post = Post.new "Hola M","Texto",Date.new(2001,1,1),@user
+ 	@n_post.save
+	@post = YAML::load(File.open("hola-m.yml","r"))
+  end
+
+
   describe "#initialize" do
 
     context "with a yaml file" do
-      it "should properly load a post from a yaml file"
+      it "should properly load a post from a yaml file" do
+	expect(@post).to be_kind_of(Post)
+      end
+     end
     end
 
     context "with proper attributes" do
-      it "should properly initialize a post instance"
+      it "should properly initialize a post instance" do
     end
 
   end
