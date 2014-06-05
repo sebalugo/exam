@@ -24,6 +24,8 @@ end
 
 def list
 
+	@post_array.each{|post| post.display_entry}
+
 end
 
 def find_post_by_title title
